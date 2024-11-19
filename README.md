@@ -1,120 +1,99 @@
 # **Email Spam Classification using NLP**
 
-
-
-
 ## **📄 Overview**
 
-#### This project demonstrates a Natural Language Processing (NLP) approach to classify emails as spam or ham (non-spam). The goal is to understand patterns in email messages using exploratory data analysis (EDA) and prepare the data for future classification tasks.
+This project demonstrates a Natural Language Processing (NLP) approach to classify emails as spam or ham (non-spam). The goal is to explore and understand patterns in email messages using Exploratory Data Analysis (EDA) and prepare the data for future classification tasks.
 
+---
 
 ## **🛠️ Features**
 
-#### -> Data cleaning and preprocessing
+- **Data cleaning and preprocessing**: Ensures the data is suitable for analysis.
+- **Visual insights into message structure**: Analyzes character, word, and sentence counts in emails.
+- **Exploratory Data Analysis (EDA)**: Utilizes histograms, pie charts, and pair plots for deeper insights.
+- **Feature engineering**: Creates features helpful for spam classification.
 
-#### -> Visual insights into message structure (characters, words, sentences)
+---
 
-#### -> Exploratory Data Analysis (EDA) with histograms and pair plots
+## **📂 Dataset**
 
-#### -> Useful feature engineering for spam classification tasks
+The dataset contains two columns:
+1. **Message**: The email text.
+2. **Category**: Labels indicating whether the email is spam or ham.
 
-## 📂 Dataset
+### **Label Encoding**
+- `0` → Ham
+- `1` → Spam
 
-#### The dataset contains two columns:
+---
 
-####         1) Message: The email text
+## **📋 Prerequisites**
 
-####         2) Category: Labels indicating whether the email is spam or ham
+Ensure the following Python libraries are installed:
 
-### Label Encoding:
+- `pandas`
+- `numpy`
+- `nltk`
+- `matplotlib`
+- `seaborn`
+- `wordcloud`
+- `sklearn`
 
-#### * 0 → Ham
+---
 
-#### * 1 → Spam
+## **📊 Exploratory Data Analysis (EDA)**
 
-## 📋 Prerequisites
+### **Key Insights from the Dataset**:
 
-#### Ensure the following Python libraries are installed:
+- **Message Structure Analysis**:
+  - **Character counts**: Ham messages tend to be longer than spam messages.
+  - **Word counts**: Ham messages usually contain more words.
+  - **Sentence counts**: Ham messages generally have more sentences.
 
-#### * pandas
+### **Visualizations**:
 
-#### * numpy
+1. **Category Distribution**:
+   - A pie chart showing the ratio of ham and spam emails.
 
-#### * nltk
+2. **Histograms**:
+   - Compare the distribution of character, word, and sentence counts between ham and spam emails.
 
-#### * matplotlib
+3. **Pair Plot**:
+   - Visualizes relationships between features (e.g., number of characters vs. words) with categorical separation.
 
-#### * seaborn
+---
 
-#### * wordcloud
+## **🛠️ Implementation Steps**
 
-#### * sklearn
+### **Data Preprocessing**:
 
-## 📊 Exploratory Data Analysis
+1. Remove duplicate messages.
+2. Remove messages with invalid labels.
+3. Encode the **Category** column to numerical values (0 for ham and 1 for spam).
+4. Add new features for analysis:
+   - **no_characters**: Number of characters in a message.
+   - **no_words**: Number of words in a message.
+   - **no_sentences**: Number of sentences in a message.
 
-### Key Insights from the Dataset:
+### **Analysis and Visualization**:
 
-#### ->Message Structure Analysis:
+1. Generate descriptive statistics for both ham and spam emails.
+2. Use visualizations (pie chart, histograms, pair plots) to interpret patterns and relationships between features.
 
- #### 1) Character counts: Ham messages tend to be longer than spam messages.
+---
 
- #### 2) Word counts: Ham messages usually contain more words.
+## **🔍 Results**
 
- #### 3) Sentence counts: Ham messages generally have more sentences.
+- **Ham emails**: Tend to be longer, more descriptive, and contain more words and sentences.
+- **Spam emails**: Often use shorter sentences, fewer words, but exhibit distinctive patterns that make them identifiable.
+- The EDA results provide valuable insights and serve as a foundation for building machine learning models for spam detection.
 
-### Visualizations:
+---
 
-#### 1. Category Distribution
+## **📈 Future Work**
 
-##### Pie chart showing the ratio of ham and spam emails.
+- **Implement machine learning models** for classification (e.g., Naive Bayes, SVM, or deep learning).
+- **Optimize preprocessing steps** for better feature extraction and representation.
+- **Expand the dataset** with multilingual support to improve model generalization.
 
-#### 2. Histograms
-
-##### Compare the distribution of character, word, and sentence counts between ham and spam.
-
-#### 3. Pair Plot
-
-
-##### Visualizes relationships between features (e.g., number of characters vs. words) with categorical separation.
-
-## 🛠️ Implementation Steps
-
-### Data Preprocessing
-
-#### -> Remove duplicate messages.
-
-
-#### -> Remove messages with invalid labels.
-
-#### -> Encode the Category column to numerical values (0 and 1).
-
-#### -> Add new features for analysis:
-
-#### *) no_characters: Number of characters in a message.
-
-#### *)no_words: Number of words in a message.
-
-#### *) no_sentences: Number of sentences in a message.
-
-### Analysis and Visualization
-
-#### -> Generate descriptive statistics for ham and spam emails.
-
-#### -> Use visualizations (pie chart, histograms, pair plots) to interpret patterns.
-
-## 🔍 Results
-
-#### -> Ham emails are generally longer and more descriptive than spam emails.
-
-#### -> Spam emails often use shorter sentences and fewer words but exhibit identifiable patterns that make them distinguishable.
-
-#### -> This EDA serves as a foundation for building machine learning models for spam detection.
-
-## 📈 Future Work
-
-
-#### -> Implement machine learning models for classification (e.g., Naive Bayes, SVM, or deep learning).
-
-#### -> Optimize preprocessing steps for feature extraction.
-
-#### -> Expand dataset with multilingual support.
+---
